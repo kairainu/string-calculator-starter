@@ -26,6 +26,15 @@ class StringCalculator {
     }
     
     private int getSum(String[] numList) throws Exception {
+    	findIllegalArguments(numList);
+    	int sum = 0;
+    	for (String num: numList) {
+    		sum += toInt(num);
+    	}
+    	return sum;
+    }
+    
+    private void findIllegalArguments(String[] numList) {
     	String negativeNumbers = new String();
         for(String num : numList){
         	if(toInt(num) < 0){
@@ -38,11 +47,6 @@ class StringCalculator {
         if (negativeNumbers.length() != 0) {
         	throw new IllegalArgumentException("negatives not allowed - " + negativeNumbers);
         }
-    	int sum = 0;
-    	for (String num: numList) {
-    		sum += toInt(num);
-    	}
-    	return sum;
     }
 
 }
