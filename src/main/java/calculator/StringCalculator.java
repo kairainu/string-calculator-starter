@@ -29,6 +29,7 @@ class StringCalculator {
     	findIllegalArguments(numList);
     	int sum = 0;
     	for (String num: numList) {
+    		if (toInt(num) <= 1000)
     		sum += toInt(num);
     	}
     	return sum;
