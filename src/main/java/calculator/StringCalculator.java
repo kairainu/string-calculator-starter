@@ -1,20 +1,16 @@
 package calculator;
 
 class StringCalculator {
-
+	private final String delimiter = ",|\n";
     public int add(String input) {
-    	String[] numbersCommaSeparated = input.split(",");
-    	String[] numbersNewlineSeparated = input.split("\n");
+    	String[] numbers = input.split(delimiter);
     	if (input.isEmpty()) {
     		return 0;
     	}
     	if (input.length() == 1) {
     		return Integer.parseInt(input);
     	}
-    	if (input.contains(",")) {
-    		return getSum(numbersCommaSeparated[0], numbersCommaSeparated[1]);
-    	}
-    	return getSum(numbersNewlineSeparated[0], numbersNewlineSeparated[1]);
+    	return getSum(numbers[0], numbers[1]);
     }
     
     private int getSum(String num1, String num2) {
