@@ -1,15 +1,20 @@
 package calculator;
 
 class StringCalculator {
-	private final String delimiter = ",|\n";
+	
     public int add(String input) {
-    	String[] numbers = input.split(delimiter);
     	if (input.isEmpty()) {
     		return 0;
     	}
     	if (input.length() == 1) {
     		return Integer.parseInt(input);
     	}
+    	String delimiter = ",|\n";
+    	if (input.matches("//(.*)\n(.*)")) {
+    		delimiter = Character.toString(input.charAt(2));
+    		input = input.substring(4);
+    	}
+    	String[] numbers = input.split(delimiter); 
     	if (numbers.length == 2) {
     		return getSum(numbers[0], numbers[1]);
     	}
