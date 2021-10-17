@@ -16,4 +16,10 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(1, stringCalculator.add("1"));
     }
+    
+    @Test
+    void string_with_two_numbers_separated_by_comma_delimitor_should_return_their_sum() {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertEquals(5, stringCalculator.add("2,3"));
+    }
 }
