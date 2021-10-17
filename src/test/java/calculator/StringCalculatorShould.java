@@ -28,4 +28,10 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	assertEquals(10, stringCalculator.add("6\n4"));
     }
+    
+    @Test
+    void string_with_three_numbers_separated_by_either_delimitor_should_return_their_sum() {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertEquals(11, stringCalculator.add("6\n4,1"));
+    }
 }

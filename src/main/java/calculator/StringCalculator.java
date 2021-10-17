@@ -10,11 +10,18 @@ class StringCalculator {
     	if (input.length() == 1) {
     		return Integer.parseInt(input);
     	}
-    	return getSum(numbers[0], numbers[1]);
+    	if (numbers.length == 2) {
+    		return getSum(numbers[0], numbers[1]);
+    	}
+    	return getSum(numbers[0], numbers[1] , numbers[2]);
     }
     
     private int getSum(String num1, String num2) {
     	return Integer.parseInt(num1) + Integer.parseInt(num2);
+    }
+    
+    private int getSum(String num1, String num2, String num3) {
+    	return Integer.parseInt(num1) + Integer.parseInt(num2) + Integer.parseInt(num3);
     }
 
 }
