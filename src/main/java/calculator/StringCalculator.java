@@ -27,6 +27,10 @@ class StringCalculator {
     
     private int getSum(String[] numList) throws Exception {
     	findIllegalArguments(numList);
+    	return calculateValues(numList);
+    }
+    
+    private int calculateValues(String[] numList) {
     	int sum = 0;
     	for (String num: numList) {
     		if (toInt(num) <= 1000)
