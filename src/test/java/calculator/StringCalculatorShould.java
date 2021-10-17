@@ -22,4 +22,10 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	assertEquals(5, stringCalculator.add("2,3"));
     }
+    
+    @Test
+    void string_with_two_numbers_separated_by_newline_delimitor_should_return_their_sum() {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertEquals(10, stringCalculator.add("6\n4"));
+    }
 }
